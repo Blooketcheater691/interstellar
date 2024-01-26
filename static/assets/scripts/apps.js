@@ -15,6 +15,27 @@ document.addEventListener('DOMContentLoaded', () => {
       error: false,
     },
     {
+      name: 'Android',
+      link: 'https://now.gg/iframe/snippet?app_pkg=com.uncube.launcher3&partner=interstellar',
+      image: '/assets/media/icons/android.jpg',
+      categories: ['all', 'emu', 'android'],
+      now: true,
+    },
+    {
+      name: 'Character AI',
+      link: 'https://now.gg/iframe/snippet?app_pkg=ai.character.app&partner=interstellar',
+      image: '/assets/media/icons/characterai.jpg',
+      categories: ['all', 'emu', 'android'],
+      now: true,
+    },
+    {
+      name: 'Aptoide',
+      link: 'https://now.gg/iframe/snippet?app_pkg=com.aptoide.partners.nowgg.store&partner=interstellar',
+      image: '/assets/media/icons/aptoide.jpg',
+      categories: ['all', 'emu', 'android'],
+      now: true,
+    },
+    {
       name: 'Movie Web',
       link: 'https://movie-web.app',
       image: 'https://movie-web.app/apple-touch-icon.png',
@@ -245,38 +266,50 @@ document.addEventListener('DOMContentLoaded', () => {
       image: '/assets/media/icons/discord.jpg',
       categories: ['all', 'social'],
       blank: 'true',
-      error: false,
     },
     {
       name: 'HD Today',
       link: 'https://hdtoday.tv',
       image: '/assets/media/icons/hd.png',
       categories: ['all', 'media', 'stream'],
-      error: false,
     },
     {
       name: 'Roblox (Now.GG)',
-      link: 'https://now.gg/iframe/snippet?app_pkg=com.roblox.client&partner=gamenora',
+      link: 'https://now.gg/iframe/snippet?app_pkg=com.roblox.client&partner=interstellar',
       image: '/assets/media/icons/roblox.png',
-      categories: ['all', 'emu'],
+      categories: ['all', 'emu', 'android'],
+      now: true,
     },
     {
       name: 'Now.GG',
       link: 'https://now.gg',
       image: '/assets/media/icons/now-gg.png',
-      categories: ['all', 'emu'],
+      categories: ['all', 'emu', 'android'],
     },
     {
-      name: 'Roblox (Now.GG Alternative)',
-      link: 'https://nowgg.nl/play/roblox-corporation/5349/roblox',
-      image: '/assets/media/icons/roblox.png',
-      categories: ['all', 'emu'],
+      name: 'Roblox (NowGG.nl)',
+      link: 'https://nowgg.nl/iframe/snippet?app_pkg=com.roblox.client&partner=interstellar',
+      image: '/assets/media/icons/astroid.png',
+      categories: ['all', 'emu', 'android'],
+      now: true,
     },
     {
-      name: 'Now.GG (Alternative)',
+      name: 'Roblox (NowGG.me)',
+      link: 'https://nowgg.me/apps/roblox-corporation/5349/roblox.html',
+      image: '/assets/media/icons/shuttle.png',
+      categories: ['all', 'emu', 'android'],
+    },
+    {
+      name: 'Now.GG (NowGG.nl)',
       link: 'https://nowgg.nl',
-      image: '/assets/media/icons/now-gg.png',
-      categories: ['all', 'emu'],
+      image: '/assets/media/icons/astroid.png',
+      categories: ['all', 'emu', 'android'],
+    },
+    {
+      name: 'Now.GG (NowGG.me)',
+      link: 'https://nowgg.me',
+      image: '/assets/media/icons/shuttle.png',
+      categories: ['all', 'emu', 'android'],
     },
     {
       name: 'Amazon Luna',
@@ -292,6 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const nonPinnedApps = document.querySelector('.container-apps')
   const pinnedApps = document.querySelector('.pinned-apps')
+
   var pinList = localStorage.getItem('pinnedGames')
   try {
     pinList = pinList.split(',').map(Number)
@@ -340,12 +374,20 @@ document.addEventListener('DOMContentLoaded', () => {
         blank(app.link)
         return false
       }
+    } else if (app.now) {
+      link.onclick = function () {
+        if (typeof app.say !== 'undefined') {
+          alert(app.say)
+        }
+        now(app.link)
+        return false
+      }
     } else {
       link.onclick = function () {
         if (typeof app.say !== 'undefined') {
           alert(app.say)
         }
-        images(app.link)
+        go(app.link)
         return false
       }
     }
@@ -380,6 +422,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     appInd++
   })
+  console.log('appsContainer:', appsContainer)
+  console.log('pinnedApps:', pinnedApps)
+  console.log('nonPinnedApps:', nonPinnedApps)
+
   appsContainer.appendChild(pinnedApps)
   appsContainer.appendChild(nonPinnedApps)
 })
