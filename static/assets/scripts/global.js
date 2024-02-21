@@ -54,107 +54,33 @@ document.addEventListener('DOMContentLoaded', function (event) {
     name.textContent = 'Dashboard'
     localStorage.setItem('name', 'Dashboard')
     localStorage.setItem('icon', '/assets/media/favicon/canvas.png')
+  } else if (selectedValue === 'LinkIt') {
+    icon.setAttribute('href', '/assets/media/favicon/linkit.ico')
+    name.textContent = 'Test Taker'
+    localStorage.setItem('name', 'Test Taker')
+    localStorage.setItem('icon', '/assets/media/favicon/linkit.ico')
+  } else if (selectedValue === 'Edpuzzle') {
+    icon.setAttribute('href', '/assets/media/favicon/edpuzzle.png')
+    name.textContent = 'Edpuzzle'
+    localStorage.setItem('name', 'Edpuzzle')
+    localStorage.setItem('icon', '/assets/media/favicon/edpuzzle.png')
   }
 
   var themeid = localStorage.getItem('theme')
   //Loads theme
   themeEle = document.createElement('link')
   themeEle.rel = 'stylesheet'
-  if (themeid == 'b') {
-    themeEle.href = '/assets/styles/themes/bannana.css'
-  }
-  if (themeid == 'bg') {
-    themeEle.href = '/assets/styles/themes/blue-green.css'
-  }
-  if (themeid == 'cr') {
-    themeEle.href = '/assets/styles/themes/cherryRed.css'
-  }
-  if (themeid == 'd') {
-    themeEle.href = '/assets/styles/themes/dark.css'
-  }
-  if (themeid == 'fg') {
-    themeEle.href = '/assets/styles/themes/forestGreen.css'
-  }
-  if (themeid == 'light') {
-    themeEle.href = '/assets/styles/theme/solid/light.css'
-  }
-  if (themeid == 'm') {
-    themeEle.href = '/assets/styles/themes/milkshake.css'
-  }
-  if (themeid == 'nb') {
-    themeEle.href = '/assets/styles/themes/nightBlue.css'
-  }
-  if (themeid == 'rb') {
-    themeEle.href = '/assets/styles/themes/red-black.css'
-  }
-  if (themeid == 'midnight') {
-    themeEle.href = '/assets/styles/theme/solid/midnight.css'
-  }
-  if (themeid == 'black-red') {
-    themeEle.href = '/assets/styles/theme/gradient/black-red.css'
-  }
-  if (themeid == 'black-blue') {
-    themeEle.href = '/assets/styles/theme/gradient/black-blue.css'
-  }
-  if (themeid == 'black-green') {
-    themeEle.href = '/assets/styles/theme/gradient/black-green.css'
-  }
-  if (themeid == 'red') {
-    themeEle.href = '/assets/styles/theme/gradient/red.css'
-  }
-  if (themeid == 'purple') {
-    themeEle.href = '/assets/styles/theme/gradient/purple.css'
-  }
-  if (themeid == 'black-orange') {
-    themeEle.href = '/assets/styles/theme/gradient/black-orange.css'
-  }
-  if (themeid == 'ocean-blue') {
-    themeEle.href = '/assets/styles/theme/solid/ocean-blue.css'
-  }
-  if (themeid == 'black-purple') {
-    themeEle.href = '/assets/styles/theme/gradient/black-purple.css'
-  }
-  if (themeid == 'black-coral') {
-    themeEle.href = '/assets/styles/theme/gradient/black-coral.css'
-  }
-  if (themeid == 'black-ruby') {
-    themeEle.href = '/assets/styles/theme/gradient/black-ruby.css'
-  }
-  if (themeid == 'black-yellow') {
-    themeEle.href = '/assets/styles/theme/gradient/black-yellow.css'
-  }
-  if (themeid == 'black-pink') {
-    themeEle.href = '/assets/styles/theme/gradient/black-pink.css'
-  }
-  if (themeid == 'black-white') {
-    themeEle.href = '/assets/styles/theme/gradient/black-white.css'
-  }
-  if (themeid == 'dark-purple') {
-    themeEle.href = '/assets/styles/theme/gradient/dark-purple.css'
-  }
-  if (themeid == 'sunset') {
-    themeEle.href = '/assets/styles/theme/gradient/sunset.css'
-  }
-  if (themeid == 'indigo') {
-    themeEle.href = '/assets/styles/theme/gradient/indigo.css'
-  }
-  if (themeid == 'fire-ice') {
-    themeEle.href = '/assets/styles/theme/gradient/fire-ice.css'
-  }
-  if (themeid == 'purple-blue') {
-    themeEle.href = '/assets/styles/theme/gradient/purple-blue.css'
-  }
   if (themeid == 'catppuccinMocha') {
-    themeEle.href = '/assets/styles/theme/catppuccin/mocha.css'
+    themeEle.href = '/assets/styles/themes/catppuccin/mocha.css?v=1'
   }
   if (themeid == 'catppuccinMacchiato') {
-    themeEle.href = '/assets/styles/theme/catppuccin/macchiato.css'
+    themeEle.href = '/assets/styles/themes/catppuccin/macchiato.css?v=1'
   }
   if (themeid == 'catppuccinFrappe') {
-    themeEle.href = '/assets/styles/theme/catppuccin/frappe.css'
+    themeEle.href = '/assets/styles/themes/catppuccin/frappe.css?v=1'
   }
   if (themeid == 'catppuccinLatte') {
-    themeEle.href = '/assets/styles/theme/catppuccin/latte.css'
+    themeEle.href = '/assets/styles/themes/catppuccin/latte.css?v=1'
   }
   document.body.appendChild(themeEle)
 })
@@ -192,14 +118,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 })
 
-// Panic
-
 document.addEventListener('DOMContentLoaded', function () {
   var eventKey = localStorage.getItem('eventKey') || '`'
-  var panicLink = localStorage.getItem('panicLink') || 'https://classroom.google.com/'
+  var pLink = localStorage.getItem('pLink') || 'https://classroom.google.com/'
 
   document.getElementById('eventKeyInput').value = eventKey
-  document.getElementById('linkInput').value = panicLink
+  document.getElementById('linkInput').value = pLink
 
   const selectedOption = localStorage.getItem('selectedOption')
   if (selectedOption) {
@@ -209,10 +133,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function saveEventKey() {
   var eventKey = document.getElementById('eventKeyInput').value
-  var panicLink = document.getElementById('linkInput').value
+  var pLink = document.getElementById('linkInput').value
 
   localStorage.setItem('eventKey', eventKey)
-  localStorage.setItem('panicLink', panicLink)
+  localStorage.setItem('pLink', pLink)
 
   document.getElementById('eventKeyInput').value = ''
   document.getElementById('linkInput').value = ''

@@ -1,28 +1,29 @@
 <div align="center">
-    <h1>Interstellar Proxy</h1>
-    </div>
-One of the most popular web proxies, used by over 5.7 million people in 2023.
+    <img src="https://github.com/InterstellarNetwork/Interstellar/assets/89202835/77c63680-544b-42e9-88d6-d288e7681e82">
+    <p>Serving over 7 million users since 2023.<p>
+</div>
 
-### Consider joining our[ Discord Community](https://discord.gg/interstellar)
+## What is Interstellar? 🤔
 
-> If you find this project useful, consider giving it a star in the original repository.
+<p>Interstellar is a web proxy with a clean and sleek ui and easy to use menus. Our goal is to provide the best user experience to everyone.</p>
 
-<h2 align="center">Features</h2>
-<ul>
-    <li>About:Blank Cloaking</li>
-    <li>Fast Speeds</li>
-    <li>Wide collection of Games</li>
-    <li>Tab Cloaking</li>
-    <li>Wide collection of Apps</li>
-    <li>Built-In Tab System</li>
-    <li>Clean UI</li>
-    <li>Inspect Element</li>
-    <li>Now.GG Support</li>
-    <li>Built in Password Protection</li>
-    <li>Geforce Now Support</li>
-</ul>
+**If you fork this project, consider giving it a star in the original repository!**
 
-<h2 align="center">Deployment</h2>
+**Join Our [Discord Community](https://discord.gg/interstellar)**
+
+## Features 💻
+
+<div align="center">
+
+| Wide Collection of Games |  Tab Cloaking   | Wide collection of Apps |
+| :----------------------: | :-------------: | :---------------------: |
+|   About:Blank Cloaking   |   Fast Speeds   |   Built in Tab system   |
+|         Clean UI         | Inspect Element |     Now.gg support      |
+|   Password Protection    |     Themes      |   GeForce NOW support   |
+
+</div>
+
+## Deployment 🔽
 
 ### Easy Deployment
 
@@ -30,18 +31,18 @@ One of the most popular web proxies, used by over 5.7 million people in 2023.
 
 <a target="_blank" href="https://heroku.com/deploy/?template=https://github.com/interstellarnetwork/interstellar"><img alt="Deploy to Heroku" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg"></a>
 <a target="_blank" href="https://app.koyeb.com/deploy?type=git&repository=github.com/interstellarnetwork/interstellar"><img alt="Deploy to Koyeb" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg"></a>
-<a target="_blank" href="https://render.com/deploy?repo=https://github.com/InterstellarNetwork/IN-Render"><img alt="Deploy to Render" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/render.svg"></a>
 <a target="_blank" href="https://app.cyclic.sh/api/app/deploy/interstellarnetwork/Interstellar"><img alt="Deploy to Cyclic" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/cyclic.svg"></a>
 
-## Deployment Alternatives:
+### Deployment Alternatives
 
-For more deployment options join our [Discord Server](https://discord.gg/interstellar) for tons of different ways to deploy Interstellar.
+For more deployment options, join our [Discord Server](https://discord.gg/interstellar) for various ways to deploy Interstellar.
+This includes methods of deploying to Render/OnRender.
 
 #### What happened to Replit Deployment?
 
-As of January 1st 2024, Replit is [no longer free](https://blog.replit.com/hosting-changes). Try GitHub Codespaces instead.
+As of January 1st, 2024, Replit is [no longer free](https://blog.replit.com/hosting-changes). Try GitHub Codespaces instead.
 
-### GitHub Codespaces:
+### GitHub Codespaces
 
 1. Create a GitHub account if you haven't already.
 2. Click "Code" (green button) and then "Create Codespace on main."
@@ -53,16 +54,15 @@ As of January 1st 2024, Replit is [no longer free](https://blog.replit.com/hosti
 
 ### Solution for if there is no popup.
 
-1. Edit the `index.js` file and edit the **Port** to a different number, don't use 8080.
-2. Click Terminal, and paste `npm i && npm run start`.
-3. Go to the ports tab, Click Foward A Port, And type the port number.
-4. Right click Visibility and set Port Visibility to Public.
+1. Run `npm i`, and before `npm run start`, prepend `$env:PORT=8080;`, replacing 8080 with another port. For example, `$env:PORT=6969; npm run start`.
+2. Go to the ports tab, Click Forward A Port, And type the port number.
+3. Right-click Visibility and set Port Visibility to Public.
 
-## Need Help with Deployment?
+### Need Help with Deployment?
 
-If you're having trouble, reach out to us on [Discord](https://discord.gg/interstellar) for personalized support.
+If you're having trouble, don't hesitate reach out to us on [Discord](https://discord.gg/interstellar) for personalized support.
 
-### Report Issues:
+## Report Issues
 
 If you encounter problems, open an issue on GitHub, and we'll address it promptly.
 

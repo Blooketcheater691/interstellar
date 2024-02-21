@@ -4,7 +4,7 @@ const input = document.getElementById('is')
 if (form && input) {
   form.addEventListener('submit', async (event) => {
     event.preventDefault()
-    processUrl(input.value, '/&')
+    processUrl(input.value, '/1')
   })
 }
 
@@ -20,7 +20,7 @@ function processUrl(value, path) {
     if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url
     else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'https://' + url
 
-    sessionStorage.setItem('encodedUrl', __uv$config.encodeUrl(url))
+    sessionStorage.setItem('GoUrl', __uv$config.encodeUrl(url))
 
     if (path) {
       location.href = path
@@ -31,11 +31,7 @@ function processUrl(value, path) {
 }
 
 function go(value) {
-  processUrl(value, '/&')
-}
-
-function now(value) {
-  processUrl(value, '/e')
+  processUrl(value, '/1')
 }
 
 function blank(value) {
