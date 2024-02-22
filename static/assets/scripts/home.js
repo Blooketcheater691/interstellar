@@ -63,7 +63,7 @@ document.onkeydown = function (evt) {
 let splashtext = [
   'why you guys want interstellar so badly',
   'your welcome',
-  'more links coming soom',
+  'more links coming soon',
   'why you on games lil bro',
 ]
 
